@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8" />
+  <title>Հանրաճանաչ մասնագիտություններ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #87ceeb;
+      margin: 0;
+      color: white;
+    }
+    a {
+      display: block;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background-color: #1ea7f2;
+      padding: 20px;
+      border-radius: 15px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      transition: 0.3s;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    .card:hover {
+      background-color: #4ebbf7;
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .info {
+      background-color: rgba(255,255,255,0.2);
+      color: #000;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <a href="math.html">⬅ Վերադառնալ գլխավոր էջ</a>
+  <div class="grid" id="list"></div>
+
+  <script>
+    const data = [
+      { name: "Ծրագրավորող", info: "Ծրագրավորողները ստեղծում են կայքեր, հավելվածներ և ծրագրեր։", img: "https://upload.wikimedia.org/wikipedia/commons/0/00/Programmer_at_work.jpg" },
+      { name: "Բժիշկ", info: "Բժիշկները առողջություն են ապահովում հիվանդների համար։", img: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Hospital_doctor.jpg" },
+      { name: "Ուսուցիչ", info: "Ուսուցիչները կրթում են տարբեր տարիքային խմբեր։", img: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Teacher_in_a_classroom.jpg" },
+      { name: "Իրավաբան", info: "Իրավաբանները պաշտպանում են քաղաքացիների իրավունքները և շահերը։", img: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Lawyer_presenting.jpg" },
+      { name: "Դիզայներ", info: "Դիզայներները ստեղծում են տեսողական բովանդակություն։", img: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Graphic_designer_at_work.jpg" }
+    ];
+
+    const container = document.getElementById('list');
+    data.forEach(({ name, info, img }) => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <div>
+          <h3>${name}</h3>
+          <p class="info">${info}</p>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
